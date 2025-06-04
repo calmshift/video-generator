@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+  ai-video-creator:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ./videos:/app/videos
+      - ./output:/app/output
+      - ./.env:/app/.env
+    environment:
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+      - ELEVENLABS_API_KEY=${ELEVENLABS_API_KEY}
+    # Command can be overridden with docker-compose run
+    # Example: docker-compose run ai-video-creator --story "Your story here"

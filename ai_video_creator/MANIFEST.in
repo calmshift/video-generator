@@ -1,0 +1,10 @@
+include README.md
+include LICENSE
+include requirements.txt
+include .env.example
+include run.sh
+include install.sh
+include demo.py
+include test.py
+recursive-include videos *
+recursive-include output *
